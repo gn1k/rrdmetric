@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head> 
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script >
+window.onload = function () {
+	setInterval(function(){ 
+		//$.get("url", function(result){
+			// result
+			var chart = new CanvasJS.Chart("chartContainer", {
+				animationEnabled: true,
+				theme: "light2",
+				title:{
+					text: "Simple Line Chart"
+				},
+				axisY:{
+					includeZero: false
+				},
+				data: [{        
+					type: "line",       
+					dataPoints: [
+						{ y: Math.floor((Math.random() * 400) + 100) },
+						{ y: Math.floor((Math.random() * 400) + 100) },
+						{ y: Math.floor((Math.random() * 400) + 100), indexLabel: "highest",markerColor: "red", markerType: "triangle" },
+						{ y: Math.floor((Math.random() * 400) + 100) },
+						{ y: Math.floor((Math.random() * 400) + 100) },
+						{ y: Math.floor((Math.random() * 400) + 100) },
+						{ y: Math.floor((Math.random() * 400) + 100) },
+						{ y: Math.floor((Math.random() * 400) + 100) },
+						{ y: Math.floor((Math.random() * 400) + 100) , indexLabel: "lowest",markerColor: "DarkSlateGrey", markerType: "cross" },
+						{ y: Math.floor((Math.random() * 400) + 100) },
+						{ y: Math.floor((Math.random() * 400) + 100) },
+						{ y: Math.floor((Math.random() * 400) + 100) }
+					]
+				}]
+			});
+
+			chart.render();
+		//});
+	}, 3000);
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>
